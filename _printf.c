@@ -30,7 +30,6 @@ int _printf(const char *format, ...)
 			{
 			case '\0':
 				return (-1);
-				break;
 			case '%':
 				result += print_p();
 				i++;
@@ -46,8 +45,11 @@ int _printf(const char *format, ...)
 }
 
 /**
- *
- *
+ * ext1_printf - function extension for printf
+ * @ap: va list
+ * @ch: case character
+ * @p: pointer to index
+ * Return: result to the main printf result
  */
 int ext1_printf(va_list ap, char ch, int *p)
 {
