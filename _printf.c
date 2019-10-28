@@ -10,11 +10,9 @@
 int _printf(const char *format, ...)
 {
 	va_list ap;
-	int i = 0;
-	int result = 0;
+	int i = 0, result = 0;
 
 	va_start(ap, format);
-
 	while (format[i])
 	{
 		if (format == NULL)
