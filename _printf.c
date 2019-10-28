@@ -30,20 +30,9 @@ int _printf(const char *format, ...)
 			{
 			case '\0':
 				return (-1);
-			case 's':
-				result += print_s(va_arg(ap, char *));
-				i++;
 				break;
 			case '%':
 				result += print_p();
-				i++;
-				break;
-			case 'd':
-				result += print_d(va_arg(ap, int));
-				i++;
-				break;
-			case 'i':
-				result += print_i(va_arg(ap, int));
 				i++;
 				break;
 			default:
@@ -68,10 +57,22 @@ int ext1_printf(va_list ap, char ch, int *p)
 	{
 	case 'c':
 	{
-		print_c(va_arg(ap, int));
+		result += print_c(va_arg(ap, int));
 		*p = *p + 1;
 		break;
 	}
+	case 's':
+		result += print_s(va_arg(ap, char *));
+		*p = *p + 1;
+		break;
+	case 'd':
+		result += print_d(va_arg(ap, int));
+		*p = *p + 1;
+		break;
+	case 'i':
+		result += print_i(va_arg(ap, int));
+		*p = *p + 1;
+		break;
 	}
 	return (result);
 }
