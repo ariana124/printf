@@ -17,6 +17,8 @@ int _printf(const char *format, ...)
 
 	while (format[i])
 	{
+		if (format == NULL)
+			return (-1);
 		if (format[i] != '%')
 		{
 			print_c(format[i]);
@@ -26,11 +28,8 @@ int _printf(const char *format, ...)
 		{
 			switch (format[i + 1])
 			{
-			case 'c':
-				print_c(va_arg(ap, int));
-				result++;
-				i++;
-				break;
+			case '\0':
+				return (-1);
 			case 's':
 				result += print_s(va_arg(ap, char *));
 				i++;
@@ -47,10 +46,32 @@ int _printf(const char *format, ...)
 				result += print_i(va_arg(ap, int));
 				i++;
 				break;
+			default:
+				result += ext1_printf(ap, format[i + 1], &i);
 			}
 		}
 		i++;
 	}
 	va_end(ap);
+	return (result);
+}
+
+/**
+ *
+ *
+ */
+int ext1_printf(va_list ap, char ch, int *p)
+{
+	int result = 0;
+
+	switch (ch)
+	{
+	case 'c':
+	{
+		print_c(va_arg(ap, int));
+		*p = *p + 1;
+		break;
+	}
+	}
 	return (result);
 }
