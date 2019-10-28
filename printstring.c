@@ -7,10 +7,15 @@
  */
 int print_s(char *s)
 {
-	int i;
+	int i, j;
+	char n[] = "(null)";
 
 	if (s == NULL)
-		return (0);
+	{
+		for (j = 0; n[j] != '\0'; j++)
+			print_c(n[j]);
+		return (j);
+	}
 
 	for (i = 0; s[i] != '\0'; i++)
 	{
