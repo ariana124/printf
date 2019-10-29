@@ -7,22 +7,32 @@
  */
 int print_d(int n)
 {
+	int count = 0;
+
 	if (n < 0)
 	{
 		print_c('-');
 		n = -n;
+		count = count + 1;
 	}
 
-	if (n == 0)
-		print_c('0');
+	count = count + print_drc(n);
 
-	if (n / 10) /**
-		     * we use recursion to divide the number by 10 until we
-		     * reach the decimal point
-		     */
-		print_i(n / 10);
+	return (count);
+}
 
-	print_c(n % 10 + '0'); /* prints the last digit */
+/**
+ * print_drc - prints a integer recursively
+ * @n: integer
+ * Return: the byte count of the integer
+ */
+int print_drc(int n)
+{
+	int i = 1;
 
-	return (n);
+	if (n / 10)
+                i = print_irc(n / 10) + 1;
+        print_c(n % 10 + '0');
+
+        return (i);
 }
