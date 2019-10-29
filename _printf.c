@@ -38,6 +38,8 @@ int _printf(const char *format, ...)
 				break;
 			default:
 				result += print_p();
+				print_c(format[i + 1]);
+				result++;
 				i++;
 				break;
 			}
@@ -78,6 +80,9 @@ int ext1_printf(va_list ap, char ch, int *p)
 		break;
 	case 'R':
 		result += print_rot(va_arg(ap, char *));
+		*p = *p + 1;
+		break;
+	case 'z':
 		*p = *p + 1;
 		break;
 	}
