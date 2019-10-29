@@ -33,7 +33,7 @@ int _printf(const char *format, ...)
 				result += print_p();
 				i++;
 				break;
-			case 'c': case 's': case 'd': case 'i':
+			case 'c': case 's': case 'd': case 'i': case 'R':
 				result += ext1_printf(ap, format[i + 1], &i);
 				break;
 			default:
@@ -74,6 +74,10 @@ int ext1_printf(va_list ap, char ch, int *p)
 		break;
 	case 'i':
 		result += print_i(va_arg(ap, int));
+		*p = *p + 1;
+		break;
+	case 'R':
+		result += print_rot(va_arg(ap, char *));
 		*p = *p + 1;
 		break;
 	}

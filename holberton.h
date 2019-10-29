@@ -24,4 +24,6 @@ int print_irc(unsigned int n);
 
 int print_drc(unsigned int n);
 
+int print_rot(char *s);
+
 #endif
