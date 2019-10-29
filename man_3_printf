@@ -1,5 +1,19 @@
-.TH man 3 "28 October 2019" "0.00" "printf man page"
+.TH man 3 "28 October 2019" "0.00" "_printf man page"
 .SH NAME
-printf
-.SH
-Fill this in later
+_printf - prints data
+.SH SYNOPSIS
+_printf FORMAT [ARGUMENT]...
+.SH DESCRIPTION
+%c - prints character\n
+
+%s - prints string\n
+
+%d - prints decimal\n
+
+%i - prints integer\n
+
+%% - prints percent\n
+
+\\n - new line
+.SH AUTHORS
+Ariana Bibliano and Nicholas Uchida
