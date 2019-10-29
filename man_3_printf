@@ -1,19 +1,26 @@
-.TH man 3 "28 October 2019" "0.00" "_printf man page"
+.TH man 3 "29 October 2019" "0.00" "_printf man page"
 .SH NAME
 _printf - prints data
 .SH SYNOPSIS
 _printf FORMAT [ARGUMENT]...
 .SH DESCRIPTION
-%c - prints character\n
 
-%s - prints string\n
+Prints arguments according to format. Format controls the output in C with the
+following sequences:
 
-%d - prints decimal\n
+%c - prints character
 
-%i - prints integer\n
+%s - prints string
 
-%% - prints percent\n
+%d - prints decimal
+
+%i - prints integer
+
+%% - prints percent
+
+Returns the byte count of the string printed excluding the null byte used to end
+the output of strings.
 
 \\n - new line
 .SH AUTHORS
-Ariana Bibliano and Nicholas Uchida
+Ariana Bibiano and Nicholas Uchida
