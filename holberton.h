@@ -20,4 +20,8 @@ int print_p(void);
 
 int ext1_printf(va_list ap, char ch, int *p);
 
+int print_irc(int n);
+
+int print_drc(int n);
+
 #endif
