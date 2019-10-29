@@ -8,15 +8,19 @@
 int print_i(int n)
 {
 	int count = 0;
+	unsigned int num;
 
 	if (n < 0)
 	{
 		print_c('-');
-		n = -n;
+		num = -n;
 		count = count + 1;
 	}
+	else
+		num = n;
 
-	count = count + print_irc(n);
+
+	count = count + print_irc(num);
 
 	return (count);
 }
@@ -26,7 +30,7 @@ int print_i(int n)
  * @n: integer
  * Return: the byte count of the integer
  */
-int print_irc(int n)
+int print_irc(unsigned int n)
 {
 	int i = 1;
 
