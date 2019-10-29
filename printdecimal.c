@@ -31,8 +31,8 @@ int print_drc(int n)
 	int i = 1;
 
 	if (n / 10)
-                i = print_irc(n / 10) + 1;
-        print_c(n % 10 + '0');
+		i = print_irc(n / 10) + 1;
+	print_c(n % 10 + '0');
 
-        return (i);
+	return (i);
 }
