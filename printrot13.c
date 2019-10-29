@@ -1,5 +1,10 @@
 #include "holberton.h"
 
+/**
+ * print_rot - encodes a string into rot13
+ * @s: string to be encoded
+ * Return: the byte count of the encoded string
+ */
 int print_rot(char *s)
 {
 	int count = 0;
