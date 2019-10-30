@@ -33,7 +33,7 @@ int _printf(const char *format, ...)
 				result += print_p();
 				i++;
 				break;
-			case 'c': case 's': case 'd': case 'i': case 'z':
+			case 'c': case 's': case 'd': case 'i': case 'R':
 				result += ext1_printf(ap, format[i + 1], &i);
 				break;
 			default:
