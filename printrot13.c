@@ -14,16 +14,15 @@ int print_rot(char *s)
 
 	for (i = 0; s[i] != '\0'; i++)
 	{
-		for (j = 0; s[j] != '\0'; j++)
+		for (j = 0; alph[j] != '\0'; j++)
 		{
 			if (s[i] == alph[j])
 			{
-				s[i] = rot13[j];
+				print_c(rot13[j]);
 				count++;
 				break;
 			}
 		}
 	}
-	print_s(s);
-	return (count);
+	return (count - 1);
 }
