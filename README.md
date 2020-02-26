@@ -1,7 +1,7 @@
 # 0x11. C - printf
 
 ### General
-> This project is a recreation of the printf function from the standard C library. It returns the number of characters in the argument received and prints data. Man man_3_printf for more details.
+This project is a recreation of the printf function from the standard C library. It returns the number of characters in the argument received and prints data. Man man_3_printf for more details.
 
 ### Compilation
 ```
